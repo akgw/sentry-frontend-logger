@@ -1,0 +1,40 @@
+{
+  "name": "sentry-frontend-logger",
+  "version": "1.0.0",
+  "description": "Logging frontend for Sentry",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.js",
+  "scripts": {
+    "tslint": "tslint --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "tslint:fix": "tslint --fix --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "build": "rm -rf dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akgw/sentry-frontend-logger.git"
+  },
+  "keywords": [
+    "logger"
+  ],
+  "author": "ryunosuke-akagawa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akgw/sentry-frontend-logger/issues"
+  },
+  "homepage": "https://github.com/akgw/sentry-frontend-logger#readme",
+  "dependencies": {
+    "raven": "^2.6.2",
+    "raven-js": "^3.26.2"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^10.3.3",
+    "moment": "^2.22.2",
+    "prettier": "^1.13.5",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "tslint-config-prettier": "^1.13.0",
+    "tslint-plugin-prettier": "^1.3.0",
+    "typescript": "^2.9.2"
+  }
+}
