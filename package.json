@@ -29,6 +29,7 @@
   "private": true,
   "devDependencies": {
     "@types/node": "^10.3.3",
+    "@types/raven": "^2.5.1",
     "moment": "^2.22.2",
     "prettier": "^1.13.5",
     "tslint": "^5.10.0",

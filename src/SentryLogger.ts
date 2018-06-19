@@ -1,22 +1,11 @@
-import * as util from "util";
-import * as RavenJs from "raven-js";
-
-export interface IOptional {
-  traceId: string | undefined;
-  serviceName: string;
-  environment: string;
-}
-
-interface ITags {
-  [id: string]: string;
-}
+const raven = ((typeof window) !== 'undefined') ? require('raven-js') : require('raven');
 
 export class SentryLogger {
   traceId = "";
   sentryEnvironment = "";
 
-  constructor(uri: string, optional: IOptional) {
-    RavenJs.config(uri).install();
+  constructor(dsn: string, optional: IOptional) {
+    raven.config(dsn).install();
 
     if (optional.traceId !== undefined && optional.traceId !== "") {
       this.traceId = optional.traceId;
@@ -24,9 +13,7 @@ export class SentryLogger {
     this.sentryEnvironment = optional.environment + "-" + optional.serviceName;
   }
 
-  info(value: any): void {
-    const context = SentryLogger.createContext(value);
-
+  error(error: Error): void {
     const tags: ITags = {
       environment: this.sentryEnvironment
     };
@@ -35,30 +22,19 @@ export class SentryLogger {
       tags.trace_id = this.traceId;
     }
 
-    RavenJs.captureException(context, {
-      tags,
-      level: "info"
-    });
-  }
-
-  error(value: any): void {
-    const context = SentryLogger.createContext(value);
-
-    const tags: ITags = {
-      environment: this.sentryEnvironment
-    };
-
-    if (this.traceId !== "") {
-      tags.trace_id = this.traceId;
-    }
-
-    RavenJs.captureException(context, {
+    raven.captureException(error, {
       tags,
       level: "error"
     });
   }
+}
 
-  private static createContext(value: any): string {
-    return `${util.inspect(value, false, null)}`;
-  }
+export interface IOptional {
+  traceId?: string;
+  serviceName: string;
+  environment: string;
+}
+
+interface ITags {
+  [id: string]: string;
 }
