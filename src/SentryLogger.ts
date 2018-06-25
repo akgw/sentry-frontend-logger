@@ -1,19 +1,19 @@
-const raven = ((typeof window) !== 'undefined') ? require('raven-js') : require('raven');
+const raven =
+  typeof window !== "undefined" ? require("raven-js") : require("raven");
 
 export class SentryLogger {
-  traceId = "";
-  sentryEnvironment = "";
+  traceId: string = "";
+  sentryEnvironment: string = "";
 
   constructor(dsn: string, optional: IOptional) {
     raven.config(dsn).install();
-
     if (optional.traceId !== undefined && optional.traceId !== "") {
       this.traceId = optional.traceId;
     }
     this.sentryEnvironment = optional.environment + "-" + optional.serviceName;
   }
 
-  error(error: Error): void {
+  public error(error: Error): void {
     const tags: ITags = {
       environment: this.sentryEnvironment
     };

@@ -7,7 +7,8 @@
   "scripts": {
     "tslint": "tslint --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
     "tslint:fix": "tslint --fix --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "test": "jest --config=jest.config.json"
   },
   "repository": {
     "type": "git",
@@ -28,10 +29,14 @@
   },
   "private": true,
   "devDependencies": {
+    "@types/jest": "^23.1.1",
     "@types/node": "^10.3.3",
     "@types/raven": "^2.5.1",
+    "coveralls": "^3.0.1",
+    "jest": "^23.1.0",
     "moment": "^2.22.2",
     "prettier": "^1.13.5",
+    "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
     "tslint-config-airbnb": "^5.9.2",
     "tslint-config-prettier": "^1.13.0",
