@@ -1,5 +1,5 @@
 {
-  "name": "sentry-frontend-logger",
+  "name": "@bananakun/sentry-frontend-logger",
   "version": "1.0.0",
   "description": "Logging frontend for Sentry",
   "main": "dist/src/index.js",
@@ -18,7 +18,7 @@
     "logger"
   ],
   "author": "ryunosuke-akagawa",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/akgw/sentry-frontend-logger/issues"
   },
