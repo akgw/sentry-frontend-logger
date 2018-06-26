@@ -27,7 +27,6 @@
     "raven": "^2.6.2",
     "raven-js": "^3.26.2"
   },
-  "private": true,
   "devDependencies": {
     "@types/jest": "^23.1.1",
     "@types/node": "^10.3.3",

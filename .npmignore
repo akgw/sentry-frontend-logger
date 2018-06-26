@@ -1,0 +1,9 @@
+test
+dist/test
+.idea
+sentry-frontend-logger.iml
+coverage
+src
+.yarn.lock
+.gitignore
+.git
