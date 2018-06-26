@@ -4,6 +4,6 @@ dist/test
 sentry-frontend-logger.iml
 coverage
 src
-.yarn.lock
+yarn.lock
 .gitignore
 .git
