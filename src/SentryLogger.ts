@@ -3,20 +3,19 @@ const raven =
 
 export class SentryLogger {
   traceId: string = "";
-  sentryEnvironment: string = "";
 
   constructor(dsn: string, optional: IOptional) {
-    raven.config(dsn).install();
     if (optional.traceId !== undefined && optional.traceId !== "") {
       this.traceId = optional.traceId;
     }
-    this.sentryEnvironment = optional.environment + "-" + optional.serviceName;
+
+    raven.config(dsn, {
+      environment: optional.environment + "-" + optional.serviceName
+    }).install();
   }
 
   public error(error: Error): void {
-    const tags: ITags = {
-      environment: this.sentryEnvironment
-    };
+    const tags: ITags = {};
 
     if (this.traceId !== "") {
       tags.trace_id = this.traceId;
