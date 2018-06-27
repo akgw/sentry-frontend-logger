@@ -1,5 +1,5 @@
 # frontendLogger
-[![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)
+[![npm version](https://badge.fury.io/js/%40bananakun%2Fsentry-frontend-logger.svg)](https://badge.fury.io/js/%40bananakun%2Fsentry-frontend-logger)
 [![Build Status](https://travis-ci.org/akgw/sentry-frontend-logger.svg?branch=master)](https://travis-ci.org/rcmdnk/travis-test)
 [![Coverage Status](https://coveralls.io/repos/github/akgw/sentry-frontend-logger/badge.svg?branch=master)](https://coveralls.io/github/akgw/sentry-frontend-logger?branch=master)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
