@@ -4,13 +4,13 @@ const raven =
 export class SentryLogger {
   traceId: string = "";
 
-  constructor(dsn: string, optional: IOptional) {
-    if (optional.traceId !== undefined && optional.traceId !== "") {
-      this.traceId = optional.traceId;
+  constructor(dsn: string, config: IConfig) {
+    if (config.traceId !== undefined && config.traceId !== "") {
+      this.traceId = config.traceId;
     }
 
     raven.config(dsn, {
-      environment: optional.environment + "-" + optional.serviceName
+      environment: config.environment + "-" + config.serviceName
     }).install();
   }
 
@@ -28,7 +28,7 @@ export class SentryLogger {
   }
 }
 
-export interface IOptional {
+export interface IConfig {
   traceId?: string;
   serviceName: string;
   environment: string;
