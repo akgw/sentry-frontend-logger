@@ -1,6 +1,6 @@
 {
   "name": "@bananakun/sentry-frontend-logger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Logging frontend for Sentry",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
