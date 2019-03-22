@@ -9,9 +9,11 @@ export class SentryLogger {
       this.traceId = config.traceId;
     }
 
-    raven.config(dsn, {
-      environment: config.environment + "-" + config.serviceName
-    }).install();
+    raven
+      .config(dsn, {
+        environment: `${config.environment}-${config.serviceName}`
+      })
+      .install();
   }
 
   public error(error: Error): void {
